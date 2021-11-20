@@ -6,11 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:58:25 by marvin            #+#    #+#             */
-/*   Updated: 2021/11/20 13:06:07 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:08:52 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 /*
 * strncmp compares at most the first n bytes of str1 and str2.

@@ -6,11 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:49:23 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/19 18:51:10 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:06:35 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 // The bzero() function shall place n zero-valued... 
 // bytes in the area pointed to by s.

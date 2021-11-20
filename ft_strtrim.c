@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 12:08:30 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 01:19:52 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:05:10 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 * The trimmed string. NULL if the allocation fails.
 */
 
-int	is_in_set(char const *set, char c)
+static int	is_in_set(char const *set, char c)
 {
 	while (*set != c && *set != 0)
 		set++;
@@ -29,7 +29,7 @@ int	is_in_set(char const *set, char c)
 	return (1);
 }
 
-int	locate_beginning(char const *s1, char const *set)
+static int	locate_beginning(char const *s1, char const *set)
 {
 	int	i;
 
@@ -39,7 +39,7 @@ int	locate_beginning(char const *s1, char const *set)
 	return (i);
 }
 
-int	locate_end(char const *s1, char const *set)
+static int	locate_end(char const *s1, char const *set)
 {
 	int	length;
 	int	i;

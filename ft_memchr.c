@@ -6,11 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:49:40 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 18:44:23 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:07:34 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 /*
 * The memchr() function locates the first occurrence of c 

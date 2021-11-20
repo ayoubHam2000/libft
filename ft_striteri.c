@@ -6,9 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 21:26:46 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/19 22:20:22 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:08:24 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 * Applies the function f to each character

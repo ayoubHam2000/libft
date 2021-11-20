@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 22:25:58 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/18 22:54:38 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:03:37 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 	file descriptor.
 */
 
-void	ft_putnbr_fd_rec(int n, int fd, int sign)
+static void	ft_putnbr_fd_rec(int n, int fd, int sign)
 {
 	if (n == 0)
 		write (fd, "0", 1);

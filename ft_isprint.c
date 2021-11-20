@@ -6,9 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:49:54 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/16 15:02:56 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:06:58 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 // The isprint() function checks whether a ...
 // character is a printable character or not.

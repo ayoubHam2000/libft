@@ -6,9 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:58:10 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/17 12:01:04 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:09:08 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 * function converts an upper-case letter to the

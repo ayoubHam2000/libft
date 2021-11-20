@@ -6,11 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:50:08 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/19 21:01:10 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:08:33 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 // dstsize include a room for NULL termination
 // ft_strlcpy return the source length

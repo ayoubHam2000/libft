@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 10:16:22 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/18 11:37:26 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:05:18 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 */
 
 //size_t because all given args are of type size_t
-size_t	min(size_t a, size_t b)
+static size_t	min(size_t a, size_t b)
 {
 	if (a > b)
 		return (b);

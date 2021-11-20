@@ -6,11 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 20:15:15 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 01:16:30 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:06:29 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include "libft.h"
 
 /*
 * The atoi() function converts the initial portion of the 
@@ -24,7 +24,7 @@
 '\r'     carriage return   
 */
 
-int	is_blank(char c)
+static int	is_blank(char c)
 {
 	if (c == ' ' || c == '\f'
 		|| c == '\v' || c == '\t' || c == '\n' || c == '\r')

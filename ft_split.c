@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:02:46 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 01:17:45 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:04:06 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 	NULL if the allocation fails.
 */
 
-int	nb_place(char const *s, char c)
+static int	nb_place(char const *s, char c)
 {
 	int		count;
 
@@ -43,7 +43,7 @@ int	nb_place(char const *s, char c)
 	return (count);
 }
 
-int	part_len(char const *s, char c)
+static int	part_len(char const *s, char c)
 {
 	int	count;
 
@@ -56,7 +56,7 @@ int	part_len(char const *s, char c)
 	return (count);
 }
 
-int	fill_table(char const *s, char c, char **tab)
+static int	fill_table(char const *s, char c, char **tab)
 {
 	int	count;
 

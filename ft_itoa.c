@@ -6,10 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:03:39 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/18 16:49:11 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:07:04 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 /*
@@ -21,7 +22,7 @@
 	allocation fails.
 */
 
-int	num_len(int n)
+static int	num_len(int n)
 {
 	int	i;
 
@@ -36,7 +37,7 @@ int	num_len(int n)
 	return (i);
 }
 
-int	abs(int n)
+static int	abs(int n)
 {
 	if (n < 0)
 		return (-1 * n);

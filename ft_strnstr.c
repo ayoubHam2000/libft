@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:33:02 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/19 23:26:12 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 19:04:49 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 	to the first character of the first occurrence of needle is returned.
 */
 
-int	compare(const char *str, const char *needle)
+static int	compare(const char *str, const char *needle)
 {
 	while (*str == *needle && *needle)
 	{
