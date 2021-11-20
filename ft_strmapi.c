@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:46:40 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/18 21:12:27 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/19 21:49:20 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 	char	*p;
 
+	if (!s || !f)
+		return (NULL);
 	p = malloc(ft_strlen(s) + 1);
 	if (!p)
 		return (NULL);

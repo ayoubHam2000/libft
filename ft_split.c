@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:02:46 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/18 15:26:20 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 01:17:45 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char	**ft_split(char const *s, char c)
 	int		count;
 	char	**tab;
 
+	if (!s)
+		return (NULL);
 	count = nb_place(s, c);
 	tab = malloc(sizeof(char *) * (count + 1));
 	if (!tab || !fill_table(s, c, tab))

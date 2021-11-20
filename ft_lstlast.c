@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 22:18:27 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 01:17:32 by aben-ham         ###   ########.fr       */
+/*   Created: 2021/11/20 14:31:44 by aben-ham          #+#    #+#             */
+/*   Updated: 2021/11/20 14:35:49 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 /*
-* Outputs the string ’s’ to the given file descriptor
+* Returns the last element of the list.
 */
 
-void	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!s)
-		return ;
-	while (*s != 0)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

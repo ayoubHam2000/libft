@@ -6,11 +6,11 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 10:36:31 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/17 11:47:21 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 13:03:34 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 // strlcat appends string src to the end of dst.
 // dstsize include a room for NULL termination
@@ -18,21 +18,23 @@
 // else dst_len + dstsize (test)
 // It will append at most dstsize - strlen(dst) - 1 characters.
 
+static	size_t	min(size_t a, size_t b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	src_len;
-	int	dst_len;
+	size_t	src_len;
+	size_t	dst_len;
 
-	src_len = 0;
-	dst_len = 0;
-	while (*dst != 0)
-	{
+	src_len = ft_strlen(src);
+	dst_len = min(ft_strlen(dst), dstsize);
+	while (*dst)
 		dst++;
-		dst_len++;
-	}
-	while (*(src + src_len) != 0)
-		src_len++;
-	while (*src != 0 && dstsize > src_len + 1)
+	while (*src != 0 && dstsize > dst_len + 1)
 	{
 		*dst = *src;
 		dst++;
@@ -40,8 +42,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dstsize--;
 	}
 	*dst = 0;
-	if (dstsize > src_len)
-		return (dst_len + src_len);
-	else
-		return (dst_len + dstsize);
+	return (dst_len + src_len);
 }

@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:43:31 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/16 21:54:35 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 01:16:58 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	int	i;
 
+	if (!dst && !src && len)
+		return (NULL);
 	i = 0;
 	if (dst > src)
 	{

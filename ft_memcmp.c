@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:11:46 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/17 18:29:12 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 13:08:13 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,21 @@
 /*
 * The memcmp() function compares byte string s1 against byte string s2.
 	Both strings are assumed to be n bytes long.
+* The memcmp() function returns zero if the two strings are identical, 
+	otherwise returns the difference between the first two differing bytes
+	(treated as unsigned char values, so that `\200' is greater
+     than `\0', for example).  Zero-length strings are always identical.
 */
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	while (n > 0 && *((char *)s1) == *((char *)s2))
+	if (n == 0)
+		return (0);
+	while (n > 1 && *((unsigned char *)s1) == *((unsigned char *)s2))
 	{
 		s1++;
 		s2++;
 		n--;
 	}
-	return (*((char *)s1) - *((char *)s2));
+	return (*((unsigned char *)s1) - *((unsigned char *)s2));
 }

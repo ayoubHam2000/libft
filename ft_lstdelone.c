@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 22:18:27 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 01:17:32 by aben-ham         ###   ########.fr       */
+/*   Created: 2021/11/20 14:41:47 by aben-ham          #+#    #+#             */
+/*   Updated: 2021/11/20 15:21:09 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+#include <stdlib.h>
 
 /*
-* Outputs the string ’s’ to the given file descriptor
+* Takes as a parameter an element and frees the
+	memory of the element’s content using the function
+	’del’ given as a parameter, and free the element.
+	The memory of ’next’ must not be freed
 */
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (!s)
+	if (!lst || !del)
 		return ;
-	while (*s != 0)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	del(lst->content);
+	free(lst);
 }

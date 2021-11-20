@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:49:59 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/16 15:05:13 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/19 20:53:15 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*d;
 	const unsigned char	*s;
 
+	if (!dst && !src && n)
+		return (NULL);
 	d = dst;
 	s = src;
 	while (n-- > 0)

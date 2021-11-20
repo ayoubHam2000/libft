@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 22:18:27 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 01:17:32 by aben-ham         ###   ########.fr       */
+/*   Created: 2021/11/20 14:50:30 by aben-ham          #+#    #+#             */
+/*   Updated: 2021/11/20 16:59:15 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+#include <stdlib.h>
 
 /*
-* Outputs the string ’s’ to the given file descriptor
+* Deletes and frees the given element and every
+	successor of that element, using the function ’del’
+	and free(3).
+	Finally, the pointer to the list must be set to
+	NULL.
 */
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!s)
+	t_list	*tmp;
+
+	if (!(*lst) || !del)
 		return ;
-	while (*s != 0)
+	while (*lst)
 	{
-		write(fd, s, 1);
-		s++;
+		del((*lst)->content);
+		tmp = (*lst)->next;
+		free ((*lst));
+		*lst = tmp;
 	}
+	*lst = NULL;
 }

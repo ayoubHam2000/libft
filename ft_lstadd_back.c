@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 22:18:27 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 01:17:32 by aben-ham         ###   ########.fr       */
+/*   Created: 2021/11/20 14:31:46 by aben-ham          #+#    #+#             */
+/*   Updated: 2021/11/20 15:21:51 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 /*
-* Outputs the string ’s’ to the given file descriptor
+* Adds the element ’new’ at the end of the list.
 */
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!s)
+	if (!new)
 		return ;
-	while (*s != 0)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	if (*lst == NULL)
+		*lst = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }

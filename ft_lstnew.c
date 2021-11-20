@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 22:18:27 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 01:17:32 by aben-ham         ###   ########.fr       */
+/*   Created: 2021/11/20 14:35:23 by aben-ham          #+#    #+#             */
+/*   Updated: 2021/11/20 14:36:15 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+#include <stdlib.h>
 
 /*
-* Outputs the string ’s’ to the given file descriptor
+* Allocates (with malloc(3)) and returns a new
+	element. The variable ’content’ is initialized
+	with the value of the parameter ’content’. The
+	variable ’next’ is initialized to NULL.
 */
 
-void	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	if (!s)
-		return ;
-	while (*s != 0)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	t_list	*p;
+
+	p = malloc(sizeof(t_list));
+	if (!p)
+		return (NULL);
+	p->content = content;
+	p->next = NULL;
+	return (p);
 }

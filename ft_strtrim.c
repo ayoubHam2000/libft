@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 12:08:30 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/18 13:13:53 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/20 01:19:52 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,40 +29,53 @@ int	is_in_set(char const *set, char c)
 	return (1);
 }
 
-/*
-* s : for count characters in the set from the begining of s1
-* e : for count characters in the set from the end of s1
-* line > 48 : (s1 = s1 + e - s;)
-	go to the end of s1;
-	if s1 is an empty string 
-	you shoudn't return back (s1--)
-* s1 - e + 1 + s : got to the beginig of s1 + s;
-*/
+int	locate_beginning(char const *s1, char const *set)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && is_in_set(set, s1[i]))
+		i++;
+	return (i);
+}
+
+int	locate_end(char const *s1, char const *set)
+{
+	int	length;
+	int	i;
+
+	length = ft_strlen(s1);
+	i = length - 1;
+	while (i > 0 && is_in_set(set, s1[i]))
+		i--;
+	return (i);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		s;
 	int		e;
 	char	*trimed;
 
-	s = 0;
-	e = ft_strlen(s1);
-	while (is_in_set(set, *s1))
-	{
-		s1++;
-		s++;
-	}
-	s1 = s1 + e - s;
-	if (e != 0)
-		s1--;
-	while (is_in_set(set, *s1))
-	{
-		s1--;
-		e--;
-	}
-	trimed = malloc(e - s + 1);
-	if (!trimed)
+	if (!s1)
 		return (NULL);
-	s1 = s1 - e + 1 + s;
-	ft_strlcpy(trimed, s1, e - s + 1);
+	if (!set)
+		set = ft_strdup("");
+	s = locate_beginning(s1, set);
+	e = locate_end(s1, set);
+	if (*s1 && e >= s)
+	{
+		trimed = malloc(e - s + 2);
+		if (!trimed)
+			return (NULL);
+		ft_strlcpy(trimed, s1 + s, e - s + 2);
+	}
+	else
+	{
+		trimed = malloc(1);
+		if (!trimed)
+			return (NULL);
+		*trimed = 0;
+	}
 	return (trimed);
 }

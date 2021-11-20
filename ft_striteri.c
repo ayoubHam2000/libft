@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 21:26:46 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/18 22:03:49 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/19 22:20:22 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (s[i] != 0)
 	{
