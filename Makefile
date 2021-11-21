@@ -6,7 +6,7 @@
 #    By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/19 17:45:26 by aben-ham          #+#    #+#              #
-#    Updated: 2021/11/21 20:44:57 by aben-ham         ###   ########.fr        #
+#    Updated: 2021/11/21 21:30:08 by aben-ham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,6 +86,3 @@ re: fclean all
 
 bonus: $(OBJ) $(BONUS_OBJS)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-
-.PHONY: clean fclean all re
