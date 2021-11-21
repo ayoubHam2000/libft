@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:03:39 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 19:07:04 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/21 10:39:32 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	num_len(int n)
 	return (i);
 }
 
-static int	abs(int n)
+static int	ft_abs(int n)
 {
 	if (n < 0)
 		return (-1 * n);
@@ -62,7 +62,7 @@ char	*ft_itoa(int n)
 	{
 		while (n != 0)
 		{
-			*(res + count - 1) = abs(n % 10) + '0';
+			*(res + count - 1) = ft_abs(n % 10) + '0';
 			count--;
 			n = n / 10;
 		}

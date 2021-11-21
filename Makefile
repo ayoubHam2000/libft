@@ -6,14 +6,14 @@
 #    By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/19 17:45:26 by aben-ham          #+#    #+#              #
-#    Updated: 2021/11/20 18:29:19 by aben-ham         ###   ########.fr        #
+#    Updated: 2021/11/21 20:44:57 by aben-ham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -I <dir>                Add directory to include search path
 # -c                      Only run preprocess, compile, and assemble steps
 NAME		= libft.a
-CFLAGS		= -Wall -Werror -Wextra -I. -c
+CFLAGS		= -Wall -Werror -Wextra -c
 FILES		= ft_atoi.c\
 				ft_bzero.c\
 				ft_calloc.c\
@@ -70,6 +70,12 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+$(OBJ): $(FILES)
+	cc $(CFLAGS) $(FILES)
+
+$(BONUS_OBJS): $(BONUS)
+	cc $(CFLAGS) $(BONUS)
+
 clean:
 	rm -f $(OBJ) $(BONUS_OBJS)
 
@@ -80,3 +86,6 @@ re: fclean all
 
 bonus: $(OBJ) $(BONUS_OBJS)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
+
+.PHONY: clean fclean all re
