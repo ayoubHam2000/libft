@@ -6,13 +6,14 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:50:05 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 19:07:54 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:50:32 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*ft_memset is used to fill a block of memory with a particular value.
+/*The memset() function writes len bytes of value c
+	(converted to an unsigned char) to the string b.
 ================
 ptr : This is a pointer to the block of memory to fill.
 c : This is the value to be set.
@@ -28,7 +29,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	p = b;
 	while (len > 0)
 	{
-		*p = c;
+		*p = (unsigned char)c;
 		p++;
 		len--;
 	}

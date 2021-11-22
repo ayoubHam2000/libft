@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 12:08:30 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 19:05:10 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/22 18:56:44 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static int	is_in_set(char const *set, char c)
 	return (1);
 }
 
-static int	locate_beginning(char const *s1, char const *set)
+static size_t	locate_beginning(char const *s1, char const *set)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s1[i] && is_in_set(set, s1[i]))
@@ -39,12 +39,14 @@ static int	locate_beginning(char const *s1, char const *set)
 	return (i);
 }
 
-static int	locate_end(char const *s1, char const *set)
+static size_t	locate_end(char const *s1, char const *set)
 {
-	int	length;
-	int	i;
+	size_t	length;
+	size_t	i;
 
 	length = ft_strlen(s1);
+	if (length == 0)
+		return (0);
 	i = length - 1;
 	while (i > 0 && is_in_set(set, s1[i]))
 		i--;
@@ -53,9 +55,9 @@ static int	locate_end(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		s;
-	int		e;
-	char	*trimed;
+	size_t		s;
+	size_t		e;
+	char		*trimed;
 
 	if (!s1)
 		return (NULL);

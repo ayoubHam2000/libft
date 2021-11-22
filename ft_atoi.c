@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 20:15:15 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/21 10:37:13 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/22 20:47:54 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static int	is_blank(char c)
 
 int	ft_atoi(const char *str)
 {
-	int	signe;
-	int	res;
+	int		signe;
+	long	res;
 
 	while (is_blank(*str))
 		str++;
@@ -49,7 +49,32 @@ int	ft_atoi(const char *str)
 	{
 		res = res * 10;
 		res = res + (*str - '0') * signe;
+		if (res < 0 && signe > 0)
+			return (-1);
+		if (res > 0 && signe < 0)
+			return (0);
 		str++;
 	}
 	return (res);
 }
+
+/*
+#include <stdio.h>
+#include "libft.h"
+#include <string.h>
+#include <stdlib.h>
+
+int main(int ac, char *av[]){
+    
+	//2147483648
+	//-99999999999999999999999999
+	char p[] = "-99999999999999999999999999";
+
+	int i = ft_atoi(p);
+	int j = atoi(p);
+
+	printf("%d\n%d\n", i, j);
+
+	return 0;
+}
+*/

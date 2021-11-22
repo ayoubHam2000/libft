@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 11:34:14 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/19 21:51:03 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/22 18:01:15 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
-	int		s1_len;
-	int		s2_len;
+	size_t	s1_len;
+	size_t	s2_len;
 
 	if (!s1 || !s2)
 		return (NULL);

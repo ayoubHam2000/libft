@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:02:46 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/21 20:59:03 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:58:50 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 	NULL if the allocation fails.
 */
 
-static int	nb_place(char const *s, char c)
+static size_t	nb_place(char const *s, char c)
 {
-	int		count;
+	size_t	count;
 
 	count = 0;
 	while (1)
@@ -43,9 +43,9 @@ static int	nb_place(char const *s, char c)
 	return (count);
 }
 
-static int	part_len(char const *s, char c)
+static size_t	part_len(char const *s, char c)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (*s != c && *s != 0)
@@ -56,9 +56,9 @@ static int	part_len(char const *s, char c)
 	return (count);
 }
 
-static void	free_table(char **tab, int size)
+static void	free_table(char **tab, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < size)
@@ -71,8 +71,8 @@ static void	free_table(char **tab, int size)
 
 static int	fill_table(char const *s, char c, char **tab)
 {
-	int	count;
-	int	size_tab;
+	size_t	count;
+	size_t	size_tab;
 
 	size_tab = 0;
 	while (1)
@@ -99,7 +99,7 @@ static int	fill_table(char const *s, char c, char **tab)
 
 char	**ft_split(char const *s, char c)
 {
-	int		count;
+	size_t	count;
 	char	**tab;
 
 	if (!s)

@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:43:31 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/20 19:07:49 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:48:44 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (len-- > 0)
 		{
-			*((char *)(dst + len)) = *((char *)(src + len));
+			*((unsigned char *)(dst + len)) = *((unsigned char *)(src + len));
 		}
 	}
 	else
 	{
 		while (len-- > 0)
 		{
-			*(char *)(dst + i) = *(char *)(src + i);
+			*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
 			i++;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 22:18:05 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/19 21:46:38 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:59:24 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*s2;
-	int		s1_len;
+	size_t	s1_len;
 
 	s1_len = ft_strlen((char *)s1);
 	s2 = malloc(s1_len + 1);
