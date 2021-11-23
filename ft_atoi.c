@@ -6,11 +6,12 @@
 /*   By: aben-ham <aben-ham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 20:15:15 by aben-ham          #+#    #+#             */
-/*   Updated: 2021/11/22 20:47:54 by aben-ham         ###   ########.fr       */
+/*   Updated: 2021/11/23 11:22:09 by aben-ham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define MAX_ULONG_DIV_10 1844674407370955161U
 
 /*
 * The atoi() function converts the initial portion of the 
@@ -34,8 +35,8 @@ static int	is_blank(char c)
 
 int	ft_atoi(const char *str)
 {
-	int		signe;
-	long	res;
+	int					signe;
+	unsigned long long	res;
 
 	while (is_blank(*str))
 		str++;
@@ -47,15 +48,18 @@ int	ft_atoi(const char *str)
 	res = 0;
 	while (*str >= '0' && *str <= '9')
 	{
+		if (res >= MAX_ULONG_DIV_10 && (*str - '0') > 5)
+		{
+			if (signe < 0)
+				return (0);
+			if (signe > 0)
+				return (-1);
+		}
 		res = res * 10;
-		res = res + (*str - '0') * signe;
-		if (res < 0 && signe > 0)
-			return (-1);
-		if (res > 0 && signe < 0)
-			return (0);
+		res = res + (*str - '0');
 		str++;
 	}
-	return (res);
+	return (res * signe);
 }
 
 /*
@@ -66,8 +70,12 @@ int	ft_atoi(const char *str)
 
 int main(int ac, char *av[]){
     
-	//2147483648
-	//-99999999999999999999999999
+	//2^64 = 18446744073709551616
+	//2^63 = 9223372036854775808
+	//2^32 = 4294967296
+	//2^31 = 2147483648
+	//99999999999999999999999999
+	
 	char p[] = "-99999999999999999999999999";
 
 	int i = ft_atoi(p);
